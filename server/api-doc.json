@@ -1,0 +1,5557 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "title": "HARDWARESTORE-APP(REST API)",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "localhost"
+    }
+  ],
+  "tags": [
+    {
+      "name": "home"
+    },
+    {
+      "name": "users"
+    },
+    {
+      "name": "product"
+    },
+    {
+      "name": "orders"
+    },
+    {
+      "name": "product images"
+    },
+    {
+      "name": "shopping cart"
+    },
+    {
+      "name": "line item"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "home"
+        ],
+        "summary": "Home Page",
+        "operationId": "HomePage",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "GAME APP STORE"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "28"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1c-R7I2oA0X5WnGRMHuY0Lm43wuKjM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:53:07 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/MasukHomePage"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Show all users",
+        "operationId": "Showallusers",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "id": 1,
+                  "name": "Donny",
+                  "email": "donny@gmail.com",
+                  "password": "2222",
+                  "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                  "createdAt": "2021-08-10T18:24:36.042Z",
+                  "updatedAt": "2021-08-10T18:24:36.042Z"
+                },
+                {
+                  "id": 2,
+                  "name": "Kukuh",
+                  "email": "kukuh@mail.com",
+                  "password": "$2b$10$Nyokv5NIUbcD0gYaqAy5.eM07Mk4MeuphHuRBJ59uXZg.1QY6raqS",
+                  "salt": "$2b$10$e21dfzOPy6ryBnyMw.8k6u9RmeDOKjErZpvLKH5UMr1HHVKf/6I2q",
+                  "createdAt": "2021-08-12T17:12:03.192Z",
+                  "updatedAt": "2021-08-12T17:12:03.192Z"
+                },
+                {
+                  "id": 4,
+                  "name": "Kukuh",
+                  "email": "kukuh1@mail.com",
+                  "password": "$2b$10$PuAIp6vls2sdoDUoNJ99R.FPr5chKoa8oPmldXkugusleXeoPpIdO",
+                  "salt": "$2b$10$u4V2NmioBmUDsfXdi2hFqORQdqZjBeRWKlr7eFsFu7myvh/jXZcau",
+                  "createdAt": "2021-08-13T14:08:48.317Z",
+                  "updatedAt": "2021-08-13T14:08:48.317Z"
+                },
+                {
+                  "id": 5,
+                  "name": "Dika",
+                  "email": "dika@mail.com",
+                  "password": "$2b$10$BNcVfa1MVRLHRkdX9e2P4.qxR4k9Oobx3OZ2i1aOUYtPZYSviBS/W",
+                  "salt": "$2b$10$hOfSizCZEDBFFnPVgU6UeOzGnMdx/UWwpGS2pw4FesLjorzBsXLeS",
+                  "avatar": "tmp\\my-uploads\\avatar-1629016591660-273366972",
+                  "createdAt": "2021-08-15T08:36:31.773Z",
+                  "updatedAt": "2021-08-15T08:36:31.773Z"
+                },
+                {
+                  "id": 6,
+                  "name": "Bagas",
+                  "email": "bagas@mail.com",
+                  "password": "$2b$10$4TzDS4GSqXZ5JCTl31d9M.3z1RZcaVw44eAPBOnFW7JJGdnkHGNe6",
+                  "salt": "$2b$10$MWeI4tzgyL2Hc7ffJfpEwObZnB230odxSFzzzqLLc4KBHBW./KkV.",
+                  "birthdate": "2021-08-10T11:24:36Z",
+                  "gender": "Male",
+                  "avatar": "tmp\\my-uploads\\avatar-1629047368665-261664703",
+                  "type": "",
+                  "createdAt": "2021-08-15T17:09:28.764Z",
+                  "updatedAt": "2021-08-15T17:09:28.764Z"
+                },
+                {
+                  "id": 7,
+                  "name": "Bagas",
+                  "email": "bagas@gmail.com",
+                  "password": "$2b$10$6xenl7vfS6DHt8yxpFAfPuYcVBxvqUtyf57wfyyiSltYwRk3dM3/S",
+                  "salt": "$2b$10$w1y3/uTu6lCIw/vdztBwo.X52WsJc4wmaxF4XiMOm3G3QXNoIPQpS",
+                  "birthdate": "2021-08-10T11:24:36Z",
+                  "gender": "Male",
+                  "avatar": "tmp\\my-uploads\\avatar-1629051772986-321108486",
+                  "type": "",
+                  "createdAt": "2021-08-15T18:22:53.091Z",
+                  "updatedAt": "2021-08-15T18:22:53.091Z"
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "2093"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"82d-PzKkjaFL1/NgX4AUFSD/IDT7Q/g\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:30:39 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/showalluser"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/:id": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Show User By Id",
+        "operationId": "ShowUserById",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 1,
+                "name": "Bagas",
+                "email": "bagas@mail.com",
+                "password": "$2b$10$qlCqAdFESPO/XvnJJBWRT.WkqRQh.smf4dgh6VQAxgDub.6sFVusu",
+                "salt": "$2b$10$mSxRO9fX.gIMs5C.Ge.UHO2924Yq.6Sb/uIadnZqvKNvfPXdsvvmy",
+                "birthdate": "2021-08-10T11:24:36Z",
+                "gender": "Male",
+                "avatar": "tmp\\my-uploads\\avatar-1629093500167-905360439",
+                "type": "",
+                "createdAt": "2021-08-16T05:58:20.187Z",
+                "updatedAt": "2021-08-16T05:58:20.187Z"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "394"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"18a-66oTDb/0BmtnhHgc52KcqC2ns/I\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 12:30:42 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/ShowUserByIdsuccess"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "User not Authenticated"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "36"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"24-U09CPAn6H0rtMC+b9DPE2G/xkrU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 12:31:09 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/ShowUserByIderror1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Register users",
+        "operationId": "Registerusers",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "birthdate",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "avatar",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Email already Used"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "32"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"20-Z6GZM7FZ1rCmktPUq117kpNukI8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:22:57 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/emailalreadyused1"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "name": "SequelizeValidationError",
+                "errors": [
+                  {
+                    "message": "Validation notEmpty on email failed",
+                    "type": "Validation error",
+                    "path": "email",
+                    "value": "",
+                    "origin": "FUNCTION",
+                    "instance": {
+                      "name": "Bagas",
+                      "email": "",
+                      "password": "0000",
+                      "birthdate": "2021-08-10T11:24:36Z",
+                      "gender": "Male",
+                      "avatar": "tmp\\my-uploads\\avatar-1629051749097-521740772",
+                      "type": "",
+                      "updatedAt": "2021-08-15T18:22:29.344Z",
+                      "createdAt": "2021-08-15T18:22:29.344Z"
+                    },
+                    "validatorKey": "notEmpty",
+                    "validatorName": "notEmpty",
+                    "validatorArgs": [
+                      {
+                        "message": "TIDAK BOLEH KOSONG"
+                      }
+                    ],
+                    "original": {
+                      "validatorName": "notEmpty",
+                      "validatorArgs": [
+                        {
+                          "message": "TIDAK BOLEH KOSONG"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "632"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"278-iRoqckdqpmN6rtwD+oFh/2NFhIc\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:22:29 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/emptyform1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Login users",
+        "operationId": "Loginusers",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IkJhZ2FzIiwiZW1haWwiOiJiYWdhc0BnbWFpbC5jb20iLCJzYWx0IjoiJDJiJDEwJHcxeTMvdVR1NmxDSXcvdmR6dEJ3by5YNTJXc0pjNHdtYXhGNFhpTU9tM0czUVhOb0lQUXBTIiwiYmlydGhkYXRlIjoiMjAyMS0wOC0xMFQxMToyNDozNi4wMDBaIiwiZ2VuZGVyIjoiTWFsZSIsImF2YXRhciI6InRtcFxcbXktdXBsb2Fkc1xcYXZhdGFyLTE2MjkwNTE3NzI5ODYtMzIxMTA4NDg2IiwidHlwZSI6IiIsImlhdCI6MTYyOTA1MjQ5Mn0.y1fFe-WkO08e_oXYiyCGgZ0n9IRxGQuAYY2TlVucg1I"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "447"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1bf-cFA46GSKf/+9VLnv+PFGJUj9LiI\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:34:52 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/loginuserssuccess"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Invalid Password"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "30"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1e-dzv476gwnZrSI5yWtCakgolWpd4\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:35:09 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/loginusersinvalidpassword1"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": " Not Found ! "
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "27"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1b-ffZOE6IhsAbGRJUNgOHY2Rz/k/c\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:35:22 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/registerusersnotfound1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/delete/:id": {
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Delete users",
+        "operationId": "Deleteusers",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 0
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-tlifxqsNyCzxIJnRwtQKuZToQQw\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:40:27 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/update/:id": {
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Update users",
+        "operationId": "updateusers",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "avatar",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": [
+                1
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "3"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3-9imuRLez3P7URNNj5ibt9BHsaag\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 18:51:37 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Products showall",
+        "operationId": "productsshowall",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/auth": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "produk autentikasi by users",
+        "operationId": "produkautentikasibyusers",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": []
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "2"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:00:30 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:01:18 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/produkautentikasitokentidakada1"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "User not Authenticated"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "36"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"24-U09CPAn6H0rtMC+b9DPE2G/xkrU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:00:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/produkautentikasitidakditemukan1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/:id": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Product show by id",
+        "operationId": "productshowbyid",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 1,
+                "name": "Mortal Kombat",
+                "views": 1,
+                "createdAt": "2021-08-10T18:45:37.111Z",
+                "updatedAt": "2021-08-12T06:59:02.794Z",
+                "Products_Images": [
+                  {
+                    "id": 5,
+                    "filename": "file-1628969042939-287660685",
+                    "filesize": "288032",
+                    "filetype": "image/jpeg",
+                    "primary": true,
+                    "ProductId": 1,
+                    "createdAt": "2021-08-14T19:24:02.947Z",
+                    "updatedAt": "2021-08-14T19:24:02.947Z"
+                  },
+                  {
+                    "id": 7,
+                    "filename": "file-1629030184357-234969038",
+                    "filesize": "288032",
+                    "filetype": "image/jpeg",
+                    "ProductId": 1,
+                    "createdAt": "2021-08-15T12:23:04.364Z",
+                    "updatedAt": "2021-08-15T12:23:04.364Z"
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "718"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2ce-EwPjFbTmVmWIdD46UPWHYucGrNo\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:04:09 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/productshowbyidberhasil"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "name": "SequelizeDatabaseError",
+                "parent": {
+                  "length": 168,
+                  "name": "error",
+                  "severity": "ERROR",
+                  "code": "42703",
+                  "position": "1408",
+                  "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+                  "line": "3514",
+                  "routine": "errorMissingColumn",
+                  "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+                },
+                "original": {
+                  "length": 168,
+                  "name": "error",
+                  "severity": "ERROR",
+                  "code": "42703",
+                  "position": "1408",
+                  "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+                  "line": "3514",
+                  "routine": "errorMissingColumn",
+                  "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+                },
+                "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "5387"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"150b-oZAI2r64QLB+jChDnqtJD07LzcI\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:05:15 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/productshowbyidtidakditemukanparams1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/add": {
+      "post": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Product add",
+        "operationId": "productadd",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "UserId",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 10,
+                "name": "Metal Gear",
+                "UserId": 2,
+                "updatedAt": "2021-08-15T19:09:30.674Z",
+                "createdAt": "2021-08-15T19:09:30.674Z",
+                "stock": 1,
+                "total_sold": 0,
+                "rating": 0,
+                "views": 0
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "268"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"10c-5/BTreJnf9txI+/PJhi+tmLjk5g\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:09:30 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/productaddberhasil"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:08:48 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/productaddgagalkarnatidakadaaccesstoken1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/delete/:id": {
+      "delete": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Delete product by id",
+        "operationId": "deleteproductbyid",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 1
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:11:39 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:11:54 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/deleteproductbyidgagalkarnatidakadatoken1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/update/:id": {
+      "put": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Update product by id",
+        "operationId": "updateproductbyid",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": [
+                1
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "3"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3-9imuRLez3P7URNNj5ibt9BHsaag\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:14:13 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "23"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"17-SuRA/yvUWUo8rK6x7dKURLeBo+0\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:13:00 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updategagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/updateViews/:id": {
+      "put": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Update view product",
+        "operationId": "updateviewproduct",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "271"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"10f-bnqVfHL7TMoFTjCAYAdS91VTk6k\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:17:02 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/updateviewproduct"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/updateSold/:id": {
+      "put": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Update total sold product",
+        "operationId": "updatetotalsoldproduct",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "271"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"10f-WeNkWWfv5BQ3Z9CaUr5/qECq4JA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:18:17 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/updatetotalsoldproduct"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "View all order",
+        "operationId": "viewallorder",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "id": 1,
+                  "name": "kukuh1",
+                  "created_on": "\"2021-08-13T15:38:18.934Z\"",
+                  "subtotal": 2,
+                  "discount": "null",
+                  "tax": "null",
+                  "total_due": "null",
+                  "total_qty": 2,
+                  "payt_trx_number": "null",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "null",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T15:38:18.935Z\"",
+                  "updatedAt": "\"2021-08-13T15:42:01.595Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                },
+                {
+                  "id": 2,
+                  "name": "kukuh order 1",
+                  "created_on": "\"2021-08-13T15:57:18.131Z\"",
+                  "subtotal": 500000,
+                  "discount": "25000",
+                  "tax": "47500",
+                  "total_due": "522500",
+                  "total_qty": 5,
+                  "payt_trx_number": "1000-1",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "Open",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T15:57:18.133Z\"",
+                  "updatedAt": "\"2021-08-13T15:57:18.133Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                },
+                {
+                  "id": 3,
+                  "name": "kukuh order 2",
+                  "created_on": "\"2021-08-13T16:03:57.586Z\"",
+                  "subtotal": 250000,
+                  "discount": "12500",
+                  "tax": "23750",
+                  "total_due": "261250",
+                  "total_qty": 5,
+                  "payt_trx_number": "1000-1",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "Open",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T16:03:57.587Z\"",
+                  "updatedAt": "\"2021-08-13T16:03:57.587Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                },
+                {
+                  "id": 4,
+                  "name": "kukuh order ",
+                  "created_on": "\"2021-08-13T16:07:33.116Z\"",
+                  "subtotal": 250000,
+                  "discount": "12500",
+                  "tax": "23750",
+                  "total_due": "261250",
+                  "total_qty": 4,
+                  "payt_trx_number": "null000-1",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "Open",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T16:07:33.117Z\"",
+                  "updatedAt": "\"2021-08-13T16:07:33.117Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                },
+                {
+                  "id": 5,
+                  "name": "kukuh order ",
+                  "created_on": "\"2021-08-13T16:07:56.015Z\"",
+                  "subtotal": 250000,
+                  "discount": "0",
+                  "tax": "25000",
+                  "total_due": "275000",
+                  "total_qty": 1,
+                  "payt_trx_number": "null000-1",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "Open",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T16:07:56.015Z\"",
+                  "updatedAt": "\"2021-08-13T16:07:56.015Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                },
+                {
+                  "id": 6,
+                  "name": "kukuh order ",
+                  "created_on": "\"2021-08-13T16:09:08.519Z\"",
+                  "subtotal": 2500000,
+                  "discount": "0",
+                  "tax": "250000",
+                  "total_due": "2750000",
+                  "total_qty": 1,
+                  "payt_trx_number": "10000",
+                  "city": "Jakarta",
+                  "address": "Wahana",
+                  "status": "Open",
+                  "UserId": 1,
+                  "createdAt": "\"2021-08-13T16:09:08.52Z\"",
+                  "updatedAt": "\"2021-08-13T16:31:24.878Z\"",
+                  "User": {
+                    "id": 1,
+                    "name": "Donny",
+                    "email": "donny@gmail.com",
+                    "password": "2222",
+                    "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+                    "birthdate": "null",
+                    "gender": "null",
+                    "avatar": "null",
+                    "type": "null",
+                    "createdAt": "\"2021-08-10T18:24:36.042Z\"",
+                    "updatedAt": "\"2021-08-10T18:24:36.042Z\""
+                  }
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "3576"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"df8-bApE/uNT6ak9cD3aKk9GprdazhM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:19:48 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/viewallordersukse"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/auth": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "View autentikasi order",
+        "operationId": "viewautentikasiorder",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": []
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "2"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:20:57 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:21:11 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/viewautentikasigagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/:id": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Show order by id",
+        "operationId": "showorderbyid",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 1,
+                "name": "kukuh1",
+                "created_on": "2021-08-13T15:38:18.934Z",
+                "subtotal": 2,
+                "total_qty": 2,
+                "city": "Jakarta",
+                "address": "Wahana",
+                "UserId": 1,
+                "createdAt": "2021-08-13T15:38:18.935Z",
+                "updatedAt": "2021-08-13T15:42:01.595Z"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "297"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"129-pk/VdCPDC4/eNLnZnrRG9h9cjJI\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:22:05 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/showorderbyidsukses"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/add": {
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Add order",
+        "operationId": "addorder",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subtotal",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "total_qty",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "city",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 7,
+                "name": "Order-1",
+                "created_on": "2021-08-15T19:27:04.928Z",
+                "subtotal": 200000,
+                "total_qty": 4,
+                "city": "Jakarta",
+                "address": "Kampung Raden",
+                "UserId": 2,
+                "updatedAt": "2021-08-15T19:27:04.929Z",
+                "createdAt": "2021-08-15T19:27:04.929Z",
+                "discount": 10000,
+                "tax": 19000,
+                "total_due": 209000,
+                "payt_trx_number": "2000-1",
+                "status": "Open"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "320"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"140-Ch0+aiLdESj3Fhd2l8t538cJGOg\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:27:05 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/addorderberhasil"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:27:23 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/addordergagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/delete/:id": {
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete order",
+        "operationId": "deleteorder",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 1
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:29:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:30:21 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/deleteordergagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/update/:id": {
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update order",
+        "operationId": "updateorder",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "lokasi",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Data Has Been Update"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "34"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"22-AGrV4tfgFzkg6zeSFHAgI2I2Fec\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:32:40 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateberhasil"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:34:56 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateordergagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/orders/updateStatus/:id": {
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update order status",
+        "operationId": "updateorderstatus",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Status Has Been Update"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "36"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"24-tvVN/AbBWKY/dM4qwYyrqLLr33w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:37:31 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateorderstatusberhasil"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:38:12 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateorderstatusgagal1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/productimages": {
+      "get": {
+        "tags": [
+          "product images"
+        ],
+        "summary": "Show all images",
+        "operationId": "showallimages",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/productimages/upload": {
+      "post": {
+        "tags": [
+          "product images"
+        ],
+        "summary": "Add images",
+        "operationId": "addimages",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "primary",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 9,
+                "filename": "file-1629056647158-676618303",
+                "filesize": "288032",
+                "filetype": "image/jpeg",
+                "primary": true,
+                "updatedAt": "2021-08-15T19:44:07.167Z",
+                "createdAt": "2021-08-15T19:44:07.167Z"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "204"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"cc-Qt3+Udye1fTl5Pn/ixX3HSYoSMc\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:44:07 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/addimagessuccess"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:44:34 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/addimagesfail1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/productimages/update/1": {
+      "put": {
+        "tags": [
+          "product images"
+        ],
+        "summary": "Update images",
+        "operationId": "updateimages",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "primary",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Status Has Been Update"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "36"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"24-tvVN/AbBWKY/dM4qwYyrqLLr33w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:45:43 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateimagessuccess"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:46:25 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/updateimagesfail1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/productimages/delete/3": {
+      "delete": {
+        "tags": [
+          "product images"
+        ],
+        "summary": "Delete images",
+        "operationId": "deleteimages",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "primary",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 1
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:47:02 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:47:27 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/deleteimagesfail1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts": {
+      "get": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Show all shopping chart",
+        "operationId": "showallshoppingchart",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts/auth": {
+      "get": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Show all shopping chart auth",
+        "operationId": "showallshoppingchartauth",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": []
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "2"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:53:59 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:54:34 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/showallshoppingchartauthfailed1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts/:id": {
+      "get": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Show all shopping chart by id",
+        "operationId": "showallshoppingchartbyid",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": "null"
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "4"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:55:01 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "name": "SequelizeDatabaseError",
+                "parent": {
+                  "length": 167,
+                  "name": "error",
+                  "severity": "ERROR",
+                  "code": "42703",
+                  "position": "689",
+                  "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+                  "line": "3514",
+                  "routine": "errorMissingColumn",
+                  "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+                },
+                "original": {
+                  "length": 167,
+                  "name": "error",
+                  "severity": "ERROR",
+                  "code": "42703",
+                  "position": "689",
+                  "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+                  "line": "3514",
+                  "routine": "errorMissingColumn",
+                  "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+                },
+                "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "2928"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"b70-hBqsveurijU54uUzYonIlh6M04U\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:55:44 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/showallshoppingchartbyiderr1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts/add": {
+      "post": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Shopping cart add",
+        "operationId": "shoppingcartadd",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 1,
+                "created_on": "2021-08-15T19:56:14.716Z",
+                "status": "Open",
+                "UserId": 2,
+                "updatedAt": "2021-08-15T19:56:14.718Z",
+                "createdAt": "2021-08-15T19:56:14.718Z"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "153"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"99-4e5KiN7Oa7y249vW6OuMwcEYmcE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:56:14 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/shoppingcartaddsuccess"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:56:51 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/shoppingcartaddfail1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts/delete/:id": {
+      "delete": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Shopping cart delete",
+        "operationId": "shoppingcartdelete",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 0
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-tlifxqsNyCzxIJnRwtQKuZToQQw\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:58:03 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:58:34 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/shoppingcartdeleteerr1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/shopping_carts/update/:id": {
+      "put": {
+        "tags": [
+          "shopping cart"
+        ],
+        "summary": "Shopping cart update",
+        "operationId": "shoppingcartupdate",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Data Has Been Update"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "34"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"22-AGrV4tfgFzkg6zeSFHAgI2I2Fec\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:59:03 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/shoppingcartupdatesucess"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 15 Aug 2021 19:59:35 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/shoppingcartupdatetokennotfound1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/line_items": {
+      "get": {
+        "tags": [
+          "line item"
+        ],
+        "summary": "Show All Line Items",
+        "operationId": "ShowAllLineItems",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/line_items/add": {
+      "post": {
+        "tags": [
+          "line item"
+        ],
+        "summary": "Add Line item",
+        "operationId": "AddLineitem",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qty",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "status",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id": 1,
+                "qty": 2,
+                "status": "Close",
+                "updatedAt": "2021-08-17T13:15:14.657Z",
+                "createdAt": "2021-08-17T13:15:14.657Z"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "165"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"a5-UXf6cAAnPXf1bvrBIU+sLS8Db4k\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:15:14 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/AddLineItemSuccess"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:19:52 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/AddLineItemFailed1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/line_items/delete/:id": {
+      "delete": {
+        "tags": [
+          "line item"
+        ],
+        "summary": "Delete Line Item",
+        "operationId": "NewRequest",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": 1
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "1"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:24:53 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:25:34 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/DeleteFail1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/line_items/update/:id": {
+      "put": {
+        "tags": [
+          "line item"
+        ],
+        "summary": "Update Line Item",
+        "operationId": "UpdateLineItem",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qty",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "status",
+            "in": "formData",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json; charset=utf-8": [
+                1
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "3"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3-9imuRLez3P7URNNj5ibt9BHsaag\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:28:16 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "application/json; charset=utf-8": {
+                "message": "Token Not Found"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "29"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1d-5HbAy3vDHKFvxHIXreOKe2CeD5o\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 17 Aug 2021 13:28:30 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/UpdateLineItemFailed1"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "MasukHomePage": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "MasukHomePage",
+      "example": {
+        "message": "GAME APP STORE"
+      }
+    },
+    "showalluser": {
+      "type": "object",
+      "required": [
+        "avatar",
+        "birthdate",
+        "createdAt",
+        "email",
+        "gender",
+        "id",
+        "name",
+        "password",
+        "salt",
+        "type",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "salt": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "showalluser",
+      "example": {
+        "id": 1,
+        "name": "Donny",
+        "email": "donny@gmail.com",
+        "password": "2222",
+        "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+        "createdAt": "2021-08-10T18:24:36.042Z",
+        "updatedAt": "2021-08-10T18:24:36.042Z"
+      }
+    },
+    "ShowUserByIdsuccess": {
+      "type": "object",
+      "required": [
+        "avatar",
+        "birthdate",
+        "createdAt",
+        "email",
+        "gender",
+        "id",
+        "name",
+        "password",
+        "salt",
+        "type",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "salt": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "ShowUserByIdsuccess",
+      "example": {
+        "id": 1,
+        "name": "Bagas",
+        "email": "bagas@mail.com",
+        "password": "$2b$10$qlCqAdFESPO/XvnJJBWRT.WkqRQh.smf4dgh6VQAxgDub.6sFVusu",
+        "salt": "$2b$10$mSxRO9fX.gIMs5C.Ge.UHO2924Yq.6Sb/uIadnZqvKNvfPXdsvvmy",
+        "birthdate": "2021-08-10T11:24:36Z",
+        "gender": "Male",
+        "avatar": "tmp\\my-uploads\\avatar-1629093500167-905360439",
+        "type": "",
+        "createdAt": "2021-08-16T05:58:20.187Z",
+        "updatedAt": "2021-08-16T05:58:20.187Z"
+      }
+    },
+    "ShowUserByIderror1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "ShowUserByIderror1",
+      "example": {
+        "message": "User not Authenticated"
+      }
+    },
+    "Error": {
+      "type": "object",
+      "required": [
+        "instance",
+        "message",
+        "origin",
+        "original",
+        "path",
+        "type",
+        "validatorArgs",
+        "validatorKey",
+        "validatorName",
+        "value"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "instance": {
+          "$ref": "#/definitions/Instance"
+        },
+        "validatorKey": {
+          "type": "string"
+        },
+        "validatorName": {
+          "type": "string"
+        },
+        "validatorArgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValidatorArg"
+          }
+        },
+        "original": {
+          "$ref": "#/definitions/Original"
+        }
+      },
+      "title": "Error",
+      "example": {
+        "message": "Validation notEmpty on email failed",
+        "type": "Validation error",
+        "path": "email",
+        "value": "",
+        "origin": "FUNCTION",
+        "instance": {
+          "name": "Bagas",
+          "email": "",
+          "password": "0000",
+          "birthdate": "2021-08-10T11:24:36Z",
+          "gender": "Male",
+          "avatar": "tmp\\my-uploads\\avatar-1629051749097-521740772",
+          "type": "",
+          "updatedAt": "2021-08-15T18:22:29.344Z",
+          "createdAt": "2021-08-15T18:22:29.344Z"
+        },
+        "validatorKey": "notEmpty",
+        "validatorName": "notEmpty",
+        "validatorArgs": [
+          {
+            "message": "TIDAK BOLEH KOSONG"
+          }
+        ],
+        "original": {
+          "validatorName": "notEmpty",
+          "validatorArgs": [
+            {
+              "message": "TIDAK BOLEH KOSONG"
+            }
+          ]
+        }
+      }
+    },
+    "Instance": {
+      "type": "object",
+      "required": [
+        "avatar",
+        "birthdate",
+        "createdAt",
+        "email",
+        "gender",
+        "id",
+        "name",
+        "password",
+        "type",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "title": "Instance",
+      "example": {
+        "name": "Bagas",
+        "email": "",
+        "password": "0000",
+        "birthdate": "2021-08-10T11:24:36Z",
+        "gender": "Male",
+        "avatar": "tmp\\my-uploads\\avatar-1629051749097-521740772",
+        "type": "",
+        "updatedAt": "2021-08-15T18:22:29.344Z",
+        "createdAt": "2021-08-15T18:22:29.344Z"
+      }
+    },
+    "ValidatorArg": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "ValidatorArg",
+      "example": {
+        "message": "TIDAK BOLEH KOSONG"
+      }
+    },
+    "Original": {
+      "type": "object",
+      "required": [
+        "validatorArgs",
+        "validatorName"
+      ],
+      "properties": {
+        "validatorName": {
+          "type": "string"
+        },
+        "validatorArgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValidatorArg"
+          }
+        }
+      },
+      "title": "Original",
+      "example": {
+        "validatorName": "notEmpty",
+        "validatorArgs": [
+          {
+            "message": "TIDAK BOLEH KOSONG"
+          }
+        ]
+      }
+    },
+    "emptyform1": {
+      "type": "object",
+      "required": [
+        "errors",
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      },
+      "title": "emptyform1",
+      "example": {
+        "name": "SequelizeValidationError",
+        "errors": [
+          {
+            "message": "Validation notEmpty on email failed",
+            "type": "Validation error",
+            "path": "email",
+            "value": "",
+            "origin": "FUNCTION",
+            "instance": {
+              "name": "Bagas",
+              "email": "",
+              "password": "0000",
+              "birthdate": "2021-08-10T11:24:36Z",
+              "gender": "Male",
+              "avatar": "tmp\\my-uploads\\avatar-1629051749097-521740772",
+              "type": "",
+              "updatedAt": "2021-08-15T18:22:29.344Z",
+              "createdAt": "2021-08-15T18:22:29.344Z"
+            },
+            "validatorKey": "notEmpty",
+            "validatorName": "notEmpty",
+            "validatorArgs": [
+              {
+                "message": "TIDAK BOLEH KOSONG"
+              }
+            ],
+            "original": {
+              "validatorName": "notEmpty",
+              "validatorArgs": [
+                {
+                  "message": "TIDAK BOLEH KOSONG"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "emailalreadyused1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "emailalreadyused1",
+      "example": {
+        "message": "Email already Used"
+      }
+    },
+    "loginuserssuccess": {
+      "type": "object",
+      "required": [
+        "access_token"
+      ],
+      "properties": {
+        "access_token": {
+          "type": "string"
+        }
+      },
+      "title": "loginuserssuccess",
+      "example": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IkJhZ2FzIiwiZW1haWwiOiJiYWdhc0BnbWFpbC5jb20iLCJzYWx0IjoiJDJiJDEwJHcxeTMvdVR1NmxDSXcvdmR6dEJ3by5YNTJXc0pjNHdtYXhGNFhpTU9tM0czUVhOb0lQUXBTIiwiYmlydGhkYXRlIjoiMjAyMS0wOC0xMFQxMToyNDozNi4wMDBaIiwiZ2VuZGVyIjoiTWFsZSIsImF2YXRhciI6InRtcFxcbXktdXBsb2Fkc1xcYXZhdGFyLTE2MjkwNTE3NzI5ODYtMzIxMTA4NDg2IiwidHlwZSI6IiIsImlhdCI6MTYyOTA1MjQ5Mn0.y1fFe-WkO08e_oXYiyCGgZ0n9IRxGQuAYY2TlVucg1I"
+      }
+    },
+    "loginusersinvalidpassword1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "loginusersinvalidpassword1",
+      "example": {
+        "message": "Invalid Password"
+      }
+    },
+    "registerusersnotfound1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "registerusersnotfound1",
+      "example": {
+        "message": " Not Found ! "
+      }
+    },
+    "produkautentikasitidakditemukan1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "produkautentikasitidakditemukan1",
+      "example": {
+        "message": "User not Authenticated"
+      }
+    },
+    "produkautentikasitokentidakada1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "produkautentikasitokentidakada1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "productshowbyidberhasil": {
+      "type": "object",
+      "required": [
+        "Products_Images",
+        "User",
+        "UserId",
+        "brand",
+        "category",
+        "condition",
+        "createdAt",
+        "desc",
+        "expire_date",
+        "id",
+        "name",
+        "price",
+        "rating",
+        "stock",
+        "total_sold",
+        "updatedAt",
+        "views",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "string"
+        },
+        "expire_date": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "total_sold": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "views": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "UserId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "User": {
+          "type": "string"
+        },
+        "Products_Images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductsImage"
+          }
+        }
+      },
+      "title": "productshowbyidberhasil",
+      "example": {
+        "id": 1,
+        "name": "Mortal Kombat",
+        "views": 1,
+        "createdAt": "2021-08-10T18:45:37.111Z",
+        "updatedAt": "2021-08-12T06:59:02.794Z",
+        "Products_Images": [
+          {
+            "id": 5,
+            "filename": "file-1628969042939-287660685",
+            "filesize": "288032",
+            "filetype": "image/jpeg",
+            "primary": true,
+            "ProductId": 1,
+            "createdAt": "2021-08-14T19:24:02.947Z",
+            "updatedAt": "2021-08-14T19:24:02.947Z"
+          },
+          {
+            "id": 7,
+            "filename": "file-1629030184357-234969038",
+            "filesize": "288032",
+            "filetype": "image/jpeg",
+            "ProductId": 1,
+            "createdAt": "2021-08-15T12:23:04.364Z",
+            "updatedAt": "2021-08-15T12:23:04.364Z"
+          }
+        ]
+      }
+    },
+    "ProductsImage": {
+      "type": "object",
+      "required": [
+        "ProductId",
+        "createdAt",
+        "filename",
+        "filesize",
+        "filetype",
+        "id",
+        "primary",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "filesize": {
+          "type": "string"
+        },
+        "filetype": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "ProductId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "ProductsImage",
+      "example": {
+        "id": 5,
+        "filename": "file-1628969042939-287660685",
+        "filesize": "288032",
+        "filetype": "image/jpeg",
+        "primary": true,
+        "ProductId": 1,
+        "createdAt": "2021-08-14T19:24:02.947Z",
+        "updatedAt": "2021-08-14T19:24:02.947Z"
+      }
+    },
+    "Parent": {
+      "type": "object",
+      "required": [
+        "code",
+        "file",
+        "length",
+        "line",
+        "name",
+        "position",
+        "routine",
+        "severity",
+        "sql"
+      ],
+      "properties": {
+        "length": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": "string"
+        },
+        "routine": {
+          "type": "string"
+        },
+        "sql": {
+          "type": "string"
+        }
+      },
+      "title": "Parent",
+      "example": {
+        "length": 168,
+        "name": "error",
+        "severity": "ERROR",
+        "code": "42703",
+        "position": "1408",
+        "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+        "line": "3514",
+        "routine": "errorMissingColumn",
+        "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+      }
+    },
+    "Original2": {
+      "type": "object",
+      "required": [
+        "code",
+        "file",
+        "length",
+        "line",
+        "name",
+        "position",
+        "routine",
+        "severity",
+        "sql"
+      ],
+      "properties": {
+        "length": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": "string"
+        },
+        "routine": {
+          "type": "string"
+        },
+        "sql": {
+          "type": "string"
+        }
+      },
+      "title": "Original2",
+      "example": {
+        "length": 168,
+        "name": "error",
+        "severity": "ERROR",
+        "code": "42703",
+        "position": "1408",
+        "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+        "line": "3514",
+        "routine": "errorMissingColumn",
+        "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+      }
+    },
+    "productshowbyidtidakditemukanparams1": {
+      "type": "object",
+      "required": [
+        "name",
+        "original",
+        "parent",
+        "sql"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/Parent"
+        },
+        "original": {
+          "$ref": "#/definitions/Original2"
+        },
+        "sql": {
+          "type": "string"
+        }
+      },
+      "title": "productshowbyidtidakditemukanparams1",
+      "example": {
+        "name": "SequelizeDatabaseError",
+        "parent": {
+          "length": 168,
+          "name": "error",
+          "severity": "ERROR",
+          "code": "42703",
+          "position": "1408",
+          "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+          "line": "3514",
+          "routine": "errorMissingColumn",
+          "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+        },
+        "original": {
+          "length": 168,
+          "name": "error",
+          "severity": "ERROR",
+          "code": "42703",
+          "position": "1408",
+          "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+          "line": "3514",
+          "routine": "errorMissingColumn",
+          "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+        },
+        "sql": "SELECT \"Product\".\"id\", \"Product\".\"name\", \"Product\".\"desc\", \"Product\".\"price\", \"Product\".\"stock\", \"Product\".\"expire_date\", \"Product\".\"weight\", \"Product\".\"category\", \"Product\".\"brand\", \"Product\".\"condition\", \"Product\".\"total_sold\", \"Product\".\"rating\", \"Product\".\"views\", \"Product\".\"UserId\", \"Product\".\"createdAt\", \"Product\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\", \"Products_Images\".\"id\" AS \"Products_Images.id\", \"Products_Images\".\"filename\" AS \"Products_Images.filename\", \"Products_Images\".\"filesize\" AS \"Products_Images.filesize\", \"Products_Images\".\"filetype\" AS \"Products_Images.filetype\", \"Products_Images\".\"primary\" AS \"Products_Images.primary\", \"Products_Images\".\"ProductId\" AS \"Products_Images.ProductId\", \"Products_Images\".\"createdAt\" AS \"Products_Images.createdAt\", \"Products_Images\".\"updatedAt\" AS \"Products_Images.updatedAt\" FROM \"Products\" AS \"Product\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Product\".\"UserId\" = \"User\".\"id\" LEFT OUTER JOIN \"Products_Images\" AS \"Products_Images\" ON \"Product\".\"id\" = \"Products_Images\".\"ProductId\" WHERE \"Product\".\"id\" = NaN;"
+      }
+    },
+    "productaddgagalkarnatidakadaaccesstoken1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "productaddgagalkarnatidakadaaccesstoken1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "productaddberhasil": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "brand",
+        "category",
+        "condition",
+        "createdAt",
+        "desc",
+        "expire_date",
+        "id",
+        "name",
+        "price",
+        "rating",
+        "stock",
+        "total_sold",
+        "updatedAt",
+        "views",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "expire_date": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_sold": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "views": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "productaddberhasil",
+      "example": {
+        "id": 10,
+        "name": "Metal Gear",
+        "UserId": 2,
+        "updatedAt": "2021-08-15T19:09:30.674Z",
+        "createdAt": "2021-08-15T19:09:30.674Z",
+        "stock": 1,
+        "total_sold": 0,
+        "rating": 0,
+        "views": 0
+      }
+    },
+    "deleteproductbyidgagalkarnatidakadatoken1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "deleteproductbyidgagalkarnatidakadatoken1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "updategagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updategagal1",
+      "example": {
+        "message": "Not Found"
+      }
+    },
+    "updateproductgagalkarnatidakadatoken1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateproductgagalkarnatidakadatoken1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "updateviewproduct": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "brand",
+        "category",
+        "condition",
+        "createdAt",
+        "desc",
+        "expire_date",
+        "id",
+        "name",
+        "price",
+        "rating",
+        "stock",
+        "total_sold",
+        "updatedAt",
+        "views",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "expire_date": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "total_sold": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "views": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "updateviewproduct",
+      "example": {
+        "id": 9,
+        "name": "Tekken",
+        "stock": 1,
+        "total_sold": 0,
+        "rating": 0,
+        "views": 1,
+        "UserId": 2,
+        "createdAt": "2021-08-15T19:08:20.38Z",
+        "updatedAt": "2021-08-15T19:17:02.406Z"
+      }
+    },
+    "updatetotalsoldproduct": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "brand",
+        "category",
+        "condition",
+        "createdAt",
+        "desc",
+        "expire_date",
+        "id",
+        "name",
+        "price",
+        "rating",
+        "stock",
+        "total_sold",
+        "updatedAt",
+        "views",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "expire_date": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "total_sold": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "views": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "updatetotalsoldproduct",
+      "example": {
+        "id": 9,
+        "name": "Tekken",
+        "stock": 1,
+        "total_sold": 2,
+        "rating": 0,
+        "views": 1,
+        "UserId": 2,
+        "createdAt": "2021-08-15T19:08:20.38Z",
+        "updatedAt": "2021-08-15T19:18:17.282Z"
+      }
+    },
+    "viewallordersukse": {
+      "type": "object",
+      "required": [
+        "User",
+        "UserId",
+        "address",
+        "city",
+        "createdAt",
+        "created_on",
+        "discount",
+        "id",
+        "name",
+        "payt_trx_number",
+        "status",
+        "subtotal",
+        "tax",
+        "total_due",
+        "total_qty",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "subtotal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "discount": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "string"
+        },
+        "total_due": {
+          "type": "string"
+        },
+        "total_qty": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "payt_trx_number": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "User": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "title": "viewallordersukse",
+      "example": {
+        "id": 1,
+        "name": "kukuh1",
+        "created_on": "2021-08-13T15:38:18.934Z",
+        "subtotal": 2,
+        "total_qty": 2,
+        "city": "Jakarta",
+        "address": "Wahana",
+        "UserId": 1,
+        "createdAt": "2021-08-13T15:38:18.935Z",
+        "updatedAt": "2021-08-13T15:42:01.595Z",
+        "User": {
+          "id": 1,
+          "name": "Donny",
+          "email": "donny@gmail.com",
+          "password": "2222",
+          "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+          "createdAt": "2021-08-10T18:24:36.042Z",
+          "updatedAt": "2021-08-10T18:24:36.042Z"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "required": [
+        "avatar",
+        "birthdate",
+        "createdAt",
+        "email",
+        "gender",
+        "id",
+        "name",
+        "password",
+        "salt",
+        "type",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "salt": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "User",
+      "example": {
+        "id": 1,
+        "name": "Donny",
+        "email": "donny@gmail.com",
+        "password": "2222",
+        "salt": "$2b$10$anmpm6LGNNpeWGhQDY8.xOkwivxZT.5b9NikiVY1O.EgT6Ksb6O.C",
+        "createdAt": "2021-08-10T18:24:36.042Z",
+        "updatedAt": "2021-08-10T18:24:36.042Z"
+      }
+    },
+    "viewautentikasigagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "viewautentikasigagal1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "showorderbyidsukses": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "address",
+        "city",
+        "createdAt",
+        "created_on",
+        "discount",
+        "id",
+        "name",
+        "payt_trx_number",
+        "status",
+        "subtotal",
+        "tax",
+        "total_due",
+        "total_qty",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "subtotal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "discount": {
+          "type": "string"
+        },
+        "tax": {
+          "type": "string"
+        },
+        "total_due": {
+          "type": "string"
+        },
+        "total_qty": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "payt_trx_number": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "title": "showorderbyidsukses",
+      "example": {
+        "id": 1,
+        "name": "kukuh1",
+        "created_on": "2021-08-13T15:38:18.934Z",
+        "subtotal": 2,
+        "total_qty": 2,
+        "city": "Jakarta",
+        "address": "Wahana",
+        "UserId": 1,
+        "createdAt": "2021-08-13T15:38:18.935Z",
+        "updatedAt": "2021-08-13T15:42:01.595Z"
+      }
+    },
+    "addorderberhasil": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "address",
+        "city",
+        "createdAt",
+        "created_on",
+        "discount",
+        "id",
+        "name",
+        "payt_trx_number",
+        "status",
+        "subtotal",
+        "tax",
+        "total_due",
+        "total_qty",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "subtotal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_qty": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "city": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "discount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tax": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_due": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "payt_trx_number": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "addorderberhasil",
+      "example": {
+        "id": 7,
+        "name": "Order-1",
+        "created_on": "2021-08-15T19:27:04.928Z",
+        "subtotal": 200000,
+        "total_qty": 4,
+        "city": "Jakarta",
+        "address": "Kampung Raden",
+        "UserId": 2,
+        "updatedAt": "2021-08-15T19:27:04.929Z",
+        "createdAt": "2021-08-15T19:27:04.929Z",
+        "discount": 10000,
+        "tax": 19000,
+        "total_due": 209000,
+        "payt_trx_number": "2000-1",
+        "status": "Open"
+      }
+    },
+    "addordergagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "addordergagal1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "deleteordergagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "deleteordergagal1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "updateberhasil": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateberhasil",
+      "example": {
+        "message": "Data Has Been Update"
+      }
+    },
+    "updateordergagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateordergagal1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "updateorderstatusberhasil": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateorderstatusberhasil",
+      "example": {
+        "message": "Status Has Been Update"
+      }
+    },
+    "updateorderstatusgagal1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateorderstatusgagal1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "addimagessuccess": {
+      "type": "object",
+      "required": [
+        "ProductId",
+        "createdAt",
+        "filename",
+        "filesize",
+        "filetype",
+        "id",
+        "primary",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "filesize": {
+          "type": "string"
+        },
+        "filetype": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "ProductId": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "title": "addimagessuccess",
+      "example": {
+        "id": 9,
+        "filename": "file-1629056647158-676618303",
+        "filesize": "288032",
+        "filetype": "image/jpeg",
+        "primary": true,
+        "updatedAt": "2021-08-15T19:44:07.167Z",
+        "createdAt": "2021-08-15T19:44:07.167Z"
+      }
+    },
+    "addimagesfail1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "addimagesfail1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "updateimagessuccess": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateimagessuccess",
+      "example": {
+        "message": "Status Has Been Update"
+      }
+    },
+    "updateimagesfail1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "updateimagesfail1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "deleteimagesfail1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "deleteimagesfail1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "showallshoppingchartauthfailed1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "showallshoppingchartauthfailed1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "showallshoppingchartbyiderr1": {
+      "type": "object",
+      "required": [
+        "name",
+        "original",
+        "parent",
+        "sql"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/Parent"
+        },
+        "original": {
+          "$ref": "#/definitions/Original2"
+        },
+        "sql": {
+          "type": "string"
+        }
+      },
+      "title": "showallshoppingchartbyiderr1",
+      "example": {
+        "name": "SequelizeDatabaseError",
+        "parent": {
+          "length": 167,
+          "name": "error",
+          "severity": "ERROR",
+          "code": "42703",
+          "position": "689",
+          "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+          "line": "3514",
+          "routine": "errorMissingColumn",
+          "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+        },
+        "original": {
+          "length": 167,
+          "name": "error",
+          "severity": "ERROR",
+          "code": "42703",
+          "position": "689",
+          "file": "d:\\pginstaller_13.auto\\postgres.windows-x64\\src\\backend\\parser\\parse_relation.c",
+          "line": "3514",
+          "routine": "errorMissingColumn",
+          "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+        },
+        "sql": "SELECT \"Shopping_Cart\".\"id\", \"Shopping_Cart\".\"created_on\", \"Shopping_Cart\".\"status\", \"Shopping_Cart\".\"UserId\", \"Shopping_Cart\".\"createdAt\", \"Shopping_Cart\".\"updatedAt\", \"User\".\"id\" AS \"User.id\", \"User\".\"name\" AS \"User.name\", \"User\".\"email\" AS \"User.email\", \"User\".\"password\" AS \"User.password\", \"User\".\"salt\" AS \"User.salt\", \"User\".\"birthdate\" AS \"User.birthdate\", \"User\".\"gender\" AS \"User.gender\", \"User\".\"avatar\" AS \"User.avatar\", \"User\".\"type\" AS \"User.type\", \"User\".\"createdAt\" AS \"User.createdAt\", \"User\".\"updatedAt\" AS \"User.updatedAt\" FROM \"Shopping_Carts\" AS \"Shopping_Cart\" LEFT OUTER JOIN \"Users\" AS \"User\" ON \"Shopping_Cart\".\"UserId\" = \"User\".\"id\" WHERE \"Shopping_Cart\".\"id\" = NaN;"
+      }
+    },
+    "shoppingcartaddsuccess": {
+      "type": "object",
+      "required": [
+        "UserId",
+        "createdAt",
+        "created_on",
+        "id",
+        "status",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "UserId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "title": "shoppingcartaddsuccess",
+      "example": {
+        "id": 1,
+        "created_on": "2021-08-15T19:56:14.716Z",
+        "status": "Open",
+        "UserId": 2,
+        "updatedAt": "2021-08-15T19:56:14.718Z",
+        "createdAt": "2021-08-15T19:56:14.718Z"
+      }
+    },
+    "shoppingcartaddfail1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "shoppingcartaddfail1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "shoppingcartdeleteerr1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "shoppingcartdeleteerr1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "shoppingcartupdatesucess": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "shoppingcartupdatesucess",
+      "example": {
+        "message": "Data Has Been Update"
+      }
+    },
+    "shoppingcartupdatetokennotfound1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "shoppingcartupdatetokennotfound1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "AddLineItemSuccess": {
+      "type": "object",
+      "required": [
+        "OrderId",
+        "ProductId",
+        "ShoppingCartId",
+        "createdAt",
+        "id",
+        "qty",
+        "status",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "qty": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "type": "string"
+        },
+        "ProductId": {
+          "type": "string"
+        },
+        "ShoppingCartId": {
+          "type": "string"
+        },
+        "OrderId": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "title": "AddLineItemSuccess",
+      "example": {
+        "id": 1,
+        "qty": 2,
+        "status": "Close",
+        "updatedAt": "2021-08-17T13:15:14.657Z",
+        "createdAt": "2021-08-17T13:15:14.657Z"
+      }
+    },
+    "AddLineItemFailed1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddLineItemFailed1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "DeleteFail1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteFail1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    },
+    "UpdateLineItemFailed1": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateLineItemFailed1",
+      "example": {
+        "message": "Token Not Found"
+      }
+    }
+  }
+}
